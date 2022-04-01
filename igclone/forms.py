@@ -35,3 +35,11 @@ class CommentForm(forms.ModelForm):
         model = Comments
         fields = ('comment')
 
+class UpdateUserProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['profile_pic', 'bio']
+        widgets = {
+            'bio':Textarea(attrs={'cols':20, 'rows':5})
+        }
+
