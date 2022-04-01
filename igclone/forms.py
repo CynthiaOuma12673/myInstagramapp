@@ -43,3 +43,10 @@ class UpdateUserProfileForm(forms.ModelForm):
             'bio':Textarea(attrs={'cols':20, 'rows':5})
         }
 
+class UpdateUserForm(forms.ModelForm):
+    email = forms.EmailField(max_length=300)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email')
+
