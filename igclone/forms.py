@@ -28,3 +28,10 @@ class PostForm(forms.ModelForm):
         model = Image
         fields = ('image','caption')
 
+class CommentForm(forms.ModelForm):
+    comment = forms.CharField(widget=EmojiPickerTextareaAdmin)
+
+    class Meta:
+        model = Comments
+        fields = ('comment')
+
