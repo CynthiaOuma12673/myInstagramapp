@@ -51,3 +51,23 @@ class Image(models.Model):
     
     def __str__(self):
         return f'{self.user.username} Image'
+
+class Follow(models.Model):
+    followers = models.ForeignKey(Profile,on_delete=models.CASCADE, related_name='following')
+    following = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='followers')
+
+    def __str__(self):
+        return f'{self.followers} Follow'
+
+class Comments(models.Model):
+    comment = models.TextField(max_length=400)
+    image = models.ForeignKey(Image, null=True, on_delete=models.CASCADE,related_name='comments')
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='comments')
+    comment_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-comment_date"]
+
+
+    def __str__(self):
+        return f'{self.user.name} Image'
