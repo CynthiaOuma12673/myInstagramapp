@@ -33,7 +33,7 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comments
-        fields = ('comment')
+        fields = ('comment',)
 
 class UpdateUserProfileForm(forms.ModelForm):
     class Meta:
