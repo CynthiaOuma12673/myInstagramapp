@@ -9,10 +9,7 @@
 
     <div class="container mt-4">
         <div class="row">
-            <!-- <div class="col-md-1"></div> -->
             <div class="col-md-6 ">
-                <!-- <a class="card-header font-weight-bold text-dark" href="#">  <img src="{% static 'photos/slide1.jpg' %}"  alt= "" class="rounded-circle user">{{post.user.username}} </a>  
-                <img class="card-img-top" src="{{image.image.url}}" alt=" " height="450">  -->
                 <div class="card mb-4">
                     <a class="card-header font-weight-bold text-dark" href="{% url 'user_profile' post.user.username  %}">  <img src="{{post.user.profile.profile_pic.url}}" class="rounded-circle border ml-3 mr-3"
                         alt="" width="35" height="35">{{post.user.username}} </a>  
@@ -34,15 +31,11 @@
                     <p class="ml-1 text-muted view">{{post.comments.count}} comments</p>
                     <small class="ml-1 text-muted mt-1">{{post.upload_date|timesince|upper}} AGO </small>
                     </div>
-
                 </div>
-
             </div>
-            <!-- <div class="col-md-1"></div> -->
             <div class="col-md-3">
                 <div class="">
                 <hr>
-
                     {% for comment in comments %}
                     {% if comment.image_id == post.id%}
                     <strong>{{ comment.user }} </strong> <span class="view">{{ comment.comment }}</span><br>
