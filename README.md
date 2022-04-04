@@ -12,11 +12,11 @@ This application is a replica of the Instagram application. Different users can 
 ## User Stories
 As a user of the application I should be able to:
 
-1. View different photos that interest me.
-2. Click on a single photo to expand it and also view the details of the photo. The photo details must appear on a modal within the same route as the main page.
-3. Search for different categories of photos. (ie. Travel, Food)
-4. Copy a link to the photo to share with my friends.
-5. View photos based on the location they were taken.
+1. Sign in to the application to start using.
+2. Upload my pictures to the application.
+3. See my profile with all my pictures.
+4. Follow other users and see their pictures on my timeline.
+5. Like a picture and leave a comment on it.
 
 ## Installation / Setup instruction
 The application requires the following installations to operate
