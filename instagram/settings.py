@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap5',
     'cloudinary',
+    'social_django',
 ]
 
 MIDDLEWARE = [
