@@ -92,7 +92,7 @@ def unfollow(request, to_unfollow):
 def follow(request, to_follow):
     if request.method == 'GET':
         follow_profile = Profile.objects.get(pk=to_follow)
-        new_following = Follow(follower=request.user.profile, followed=follow_profile)
+        new_following = Follow(followers=request.user.profile, following=follow_profile)
         new_following.save()
         return redirect('user_profile', follow_profile.user.username)
     
@@ -104,10 +104,10 @@ def user_profile(request, username):
         return redirect('profile', username=request.user.username)
     user_posts = user_poster.images.all()
     
-    followers = Follow.objects.filter(followed=user_poster.profile)
+    followers = Follow.objects.filter(following =user_poster.profile)
     if_follow = None
     for follower in followers:
-        if request.user.profile == follower.follower:
+        if request.user.profile == follower.followers:
             if_follow = True
         else:
             if_follow = False
