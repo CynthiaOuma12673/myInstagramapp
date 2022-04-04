@@ -59,7 +59,7 @@ def profile(request, username):
         user_form = UpdateUserForm(instance=request.user)
         profile_form = UpdateUserProfileForm()
 
-    return render(request, 'all-instagram/profile.html', {'user_form':user_form,'profile_form':profile_form,'images':images})
+    return render(request, 'all-ig/profile.html', {'user_form':user_form,'profile_form':profile_form,'images':images})
 
 
 @login_required(login_url='login')
@@ -79,7 +79,7 @@ def comment(request, id):
     else:
         form = CommentForm()
 
-    return render(request, 'all-instagram/post.html', {'post': image,'form': form,'comments':comments})
+    return render(request, 'all-ig/post.html', {'post': image,'form': form,'comments':comments})
 
 @login_required(login_url='login')
 def unfollow(request, to_unfollow):
@@ -114,7 +114,7 @@ def user_profile(request, username):
             if_follow = False
 
     print(followers)
-    return render(request, 'all-instagram/poster.html', {'user_poster': user_poster,'followers': followers, 'if_follow': if_follow,'user_posts':user_posts})
+    return render(request, 'all-ig/poster.html', {'user_poster': user_poster,'followers': followers, 'if_follow': if_follow,'user_posts':user_posts})
 
 
 @login_required(login_url='login')
@@ -133,6 +133,6 @@ def search(request):
         results = User.objects.filter(username__icontains=search_term)
         print(results)
 
-        return render(request, 'all-instagram/users.html',locals())
+        return render(request, 'all-ig/users.html',locals())
 
     return redirect(index)
