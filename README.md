@@ -7,7 +7,7 @@ Cynthia Ouma
 This application is a replica of the Instagram application. Different users can register and edit their profiles. They can also view other users profiles just like in instagram app.
 
 ## App Layout
-![Landing page photo](https://github.com/CynthiaOuma12673/mygallery/blob/master/media/images/screenshot.png)
+![Landing page photo](https://github.com/CynthiaOuma12673/myInstagramapp/blob/master/media/images/Screenshot%20from%202022-04-04%2016-24-12.png)
 
 ## User Stories
 As a user of the application I should be able to:
