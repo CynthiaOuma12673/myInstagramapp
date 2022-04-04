@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'bootstrap5',
     'cloudinary',
     'social_django',
+    'emoji_picker',
+    'tinymce',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -110,6 +113,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+        'django.contrib.auth.backends.ModelBackend',
+
+        'social_core.backends.facebook.FacebookOAuth2',
+
+]
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -136,6 +147,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
 
 cloudinary.config( 
     cloud_name = "cynthia123456", 
